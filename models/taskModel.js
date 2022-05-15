@@ -1,17 +1,16 @@
 const mongoose= require('mongoose');
 
 const taskSchema= mongoose.Schema({
-title:{
+name:{
     type: String,
-    required:[true, 'A task Must have a title'],
+    required:[true, 'A task Must have a name'],
     maxlength: [40, 'A task must have less or equal then 40 characters'],
     minlength: [3, 'A task must have more or equal then 10 characters'],
 },
 
-title:{
+description:{
     type: String,
     required:[true, 'A task Must have a description'],
-    maxlength: [40, 'A task must have less or equal then 40 characters'],
     minlength: [3, 'A task must have more or equal then 10 characters'],
 }
 

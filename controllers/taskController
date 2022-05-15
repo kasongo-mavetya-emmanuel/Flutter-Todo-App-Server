@@ -2,6 +2,7 @@ const Task=require('../models/taskModel');
 
 
 exports.getTasks=async (req,res)=>{
+
    try{
     const tasks= await Task.find();
 
@@ -26,7 +27,7 @@ exports.getTasks=async (req,res)=>{
 exports.createTask=async (req,res)=>{
     try{
      const task= await Task.create({
-         title: req.body.title,
+         name: req.body.name,
          description: req.body.description
      });
  
@@ -50,7 +51,7 @@ exports.createTask=async (req,res)=>{
  exports.updateTask=async (req,res)=>{
     try{
      const task= await Task.findOneAndUpdate({_id: req.params.id},{
-         title: req.body.title,
+         name: req.body.name,
          description: req.body.description
      },{
         new:true,
